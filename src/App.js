@@ -1,6 +1,6 @@
-import logo from './pokeball.svg';
-import './App.css';
-import Grid from './grid'
+import logo from './Assets/pokeball.svg';
+import './Styling/App.css';
+import Grid from './Components/grid'
 
 
 
@@ -15,7 +15,7 @@ function App() {
 
             <p>
           </p>
-          
+
         </header>
       </div>
   );
