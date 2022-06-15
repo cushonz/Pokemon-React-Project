@@ -1,43 +1,24 @@
-import { useState } from 'react';
+import React from "react";
+import {
+    DropdownWrapper,
+    StyledSelect,
+    StyledOption,
+    StyledLabel,
+    StyledButton
+} from '../Styling/styles'
 
-function Dropdown( props ) {
-
-    const [ display, setDisplay ] = useState( 'none' )
-
-    function handleClick() {
-
-        if ( display == 'none' ) {
-
-            setDisplay( 'block' )
-
-        } else {
-
-            setDisplay( 'none' )
-
-        }
-
-    }
-
+export function Dropdown(props) {
     return (
-
-        <div>
-
-            <div>
-
-                Hello World
-
-            </div>
-
-            <div style={{display:display}}>
-
-                { props.children }
-
-            </div>
-
-        </div>
-
-    )
-
+        <DropdownWrapper action={props.action} onChange={props.onChange}>
+            <StyledLabel htmlFor="services">{props.formLabel}</StyledLabel>
+            <StyledSelect id="services" name="services">
+                {props.children}
+            </StyledSelect>
+            <StyledButton type="submit" value={props.buttonText} />
+        </DropdownWrapper>
+    );
 }
 
-export { Dropdown }
+export function Option(props) {
+    return <StyledOption selected={props.selected}>{props.value}</StyledOption>;
+}
